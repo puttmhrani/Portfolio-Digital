@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Putri Maharani | Digital Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            font-family: 'Poppins', sans-serif;
+            color: #444;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #ff9a9e; border-radius: 10px; }
+
+        .header-bg {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            color: #2c3e50;
+            padding: 4rem 0;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 20px rgba(132, 250, 176, 0.2);
+        }
+        
+        .main-card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .profile-img:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        /* Playful Nav Tabs */
+        .nav-pills .nav-link {
+            border-radius: 50px;
+            font-weight: 600;
+            padding: 12px 25px;
+            transition: all 0.3s;
+            color: #666;
+            background: white;
+            margin: 0 5px;
+            border: 2px solid transparent;
+        }
+        .nav-pills .nav-link.active {
+            background-color: #ff9a9e;
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
+        }
+        .nav-pills .nav-link:hover:not(.active) {
+            background-color: #ffe6e7;
+            color: #ff758c;
+        }
+
+        /* Accordion Styling */
+        .accordion-button {
+            background-color: #fff5f6;
+            color: #444;
+            font-weight: 600;
+            border-radius: 15px !important;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #ffd1d4;
+            color: #d63384;
+            box-shadow: none;
+        }
+        .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 15px !important;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        
+        pre {
+            background-color: #2d3436;
+            color: #a29bfe;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 5px solid #fd79a8;
+        }
+        
+        .badge-custom {
+            background: linear-gradient(45deg, #a18cd1 0%, #fbc2eb 100%);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-bg position-relative overflow-hidden">
+        <div class="container text-center position-relative z-index-1">
+            <h1 class="display-4 fw-bold">Hi, I'm Putri!</h1>
+            <p class="lead mt-3">Digital Business Student | Junior Graphic Design | UI/UX Enthusiast</p>
+            <div class="mt-4">
+                <a href="https://www.linkedin.com/in/puttmhrani" class="btn btn-light rounded-pill px-4 fw-bold shadow-sm">Let's Connect! 🚀</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        
+        <ul class="nav nav-pills nav-fill mb-5" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="profil-tab" data-bs-toggle="tab" data-bs-target="#profil" type="button">
+                    <i class="bi bi-emoji-smile-fill me-2"></i> Profil Diri
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="riwayat-tab" data-bs-toggle="tab" data-bs-target="#riwayat" type="button">
+                    <i class="bi bi-mortarboard-fill me-2"></i> Experience
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="bootstrap-tab" data-bs-toggle="tab" data-bs-target="#bootstrap-fav" type="button">
+                    <i class="bi bi-code-slash me-2"></i> My Fav Boostrap Code
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content main-card">
+
+            <div class="tab-pane fade show active" id="profil" role="tabpanel">
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center mb-4 mb-md-0">
+                        <img src="Muka Cantik.jpg" class="profile-img" alt="Putri Maharani">
+                        <div class="mt-3">
+                            <span class="badge bg-warning text-dark rounded-pill p-2 px-3">✨ Creative Soul</span>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h2 class="fw-bold mb-2 text-gradient">Putri Maharani</h2>
+                        <p class="text-muted mb-4">Digital Business Undergraduate Student</p>
+                        
+                        <p class="lead fs-6">
+                            Hai! Aku mahasiswa Bisnis Digital yang punya ketertarikan besar di dunia entrepreneurship dan strategi kreatif 
+                            Aku suka banget ngulik ide bisnis baru, desain UI/UX, dan bikin konten visual yang eye catching
+                        </p>
+                        <hr class="my-4">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-light p-3 rounded-circle me-3 text-primary"><i class="bi bi-envelope-fill"></i></div>
+                                    <div>
+                                        <small class="text-muted">Email</small>
+                                        <div class="fw-bold">puttmhrani@gmail.com </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-light p-3 rounded-circle me-3 text-success"><i class="bi bi-whatsapp"></i></div>
+                                    <div>
+                                        <small class="text-muted">Phone</small>
+                                        <div class="fw-bold">0857-8057-6723</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-light p-3 rounded-circle me-3 text-info"><i class="bi bi-geo-alt-fill"></i></div>
+                                    <div>
+                                        <small class="text-muted">Lokasi</small>
+                                        <div class="fw-bold">Jakarta, Indonesia</div>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-light p-3 rounded-circle me-3 text-danger"><i class="bi bi-linkedin"></i></div>
+                                    <div>
+                                        <small class="text-muted">LinkedIn</small>
+                                        <div class="fw-bold">puttmhrani</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="riwayat" role="tabpanel">
+                <h3 class="fw-bold mb-4 text-center">Perjalanan & Keahlianku</h3>
+                
+                <div class="card border-0 shadow-sm mb-4 bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-primary">Pendidikan</h5>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th>Institusi</th>
+                                        <th>Jurusan</th>
+                                        <th>Tahun</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold">Universitas Negeri Jakarta</td>
+                                        <td>S1 Bisnis Digital</td>
+                                        <td>2024 - Sekarang</td>
+                                        <td><span class="badge bg-success">GPA: 3.90</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Jayjay School</td>
+                                        <td>Graphic Designer (Branding) & UI/UX</td>
+                                        <td>2025</td>
+                                        <td><span class="badge bg-info">Sertifikasi</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-danger">Pengalaman Seru</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-transparent">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong>Chief of Marketing</strong> Project Rantangin.ID (Sustainable Catering)
+                                        <div class="small text-muted">Mengembangkan konsep bisnis katering ramah lingkungan</div>
+                                    </div>
+                                    <span class="badge bg-secondary rounded-pill">Jan - Mar 2025</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item bg-transparent">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong>UI/UX Designer</strong> Project Paper Cycle (FEB UNJ)
+                                        <div class="small text-muted">Membuat prototype interaktif aplikasi daur ulang kertas yang user-friendly</div>
+                                    </div>
+                                    <span class="badge bg-secondary rounded-pill">Jan - Mar 2025</span>
+                                </div>
+                            </li>
+                             <li class="list-group-item bg-transparent">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong>Marketing Apprentice</strong> Event StudentsxCEOs Jakarta
+                                        <div class="small text-muted">Brainstorming konsep visual dan moodboard acara</div>
+                                    </div>
+                                    <span class="badge bg-secondary rounded-pill">Feb 2025</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <h5 class="fw-bold mb-3">Skillset</h5>
+                    <div>
+                        <span class="badge badge-custom m-1">UI/UX Design</span>
+                        <span class="badge badge-custom m-1">Graphic Design</span>
+                        <span class="badge badge-custom m-1">Branding</span>
+                        <span class="badge badge-custom m-1">Market Research</span>
+                        <span class="badge badge-custom m-1">Copywriting</span>
+                        <span class="badge badge-custom m-1">Public Speaking</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="bootstrap-fav" role="tabpanel">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold text-primary">Top 10 Bootstrap Codes! </h2>
+                    <p class="text-muted">Kenapa aku suka banget sama kodingan ini? Cek alasannya di bawah!</p>
+                </div>
+
+                <div class="accordion" id="playfulAccordion">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="h1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1">
+                                1. Grid System (Col & Row) 
+                            </button>
+                        </h2>
+                        <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#playfulAccordion">
+                            <div class="accordion-body">
+                                <p>Jujur ini <strong>MVP</strong>-nya Bootstrap! Bikin layout website biar rapi di HP sama Laptop tuh gampang banget. Tinggal pasang <code>col-md-6</code>, beres deh. Gak perlu pusing ngitung pixel manual.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="h2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">
+                                2. Navbar Component 
+                            </button>
+                        </h2>
+                        <div id="c2" class="accordion-collapse collapse" data-bs-parent="#playfulAccordion">
+                            <div class="accordion-body">
+                                <p>Menu navigasi sat-set! Coding menu responsif yang ada tombol <em>hamburger</em>-nya itu ribet kalau manual. Pake ini, tinggal copas, langsung jadi menu kece kayak di atas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="h3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3">
+                                3. Cards 
+                            </button>
+                        </h2>
+                        <div id="c3" class="accordion-collapse collapse" data-bs-parent="#playfulAccordion">
+                            <div class="accordion-body">
+                                <p>Kotak ajaib serbaguna! Mau majang foto profil, portofolio, atau artikel blog, pake <strong>Card</strong> langsung kelihatan profesional dan rapi ada bordernya. Estetik instan!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="h4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4">
+                                4. Buttons (Btn) 
+                            </button>
+                        </h2>
+                        <div id="c4" class="accordion-collapse collapse" data-bs-parent="#playfulAccordion">
+                            <div class="accordion-body">
+                                <p>Tombol warna-warni kaya permen! Gak perlu CSS panjang-panjang buat bikin tombol hover efek. Cukup ketik <code>btn btn-primary</code> atau <code>btn-outline-danger</code>, kelar urusan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="h5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5">
+                                5. Modal (Pop-up) 
+                            </button>
+                        </h2>
+                        <div id="c5" class="accordion-collapse collapse" data-bs-parent="#playfulAccordion">
+                            <div class="accordion-body">
+                                <p>Buat efek kaget yang bermanfaat! Hehe. Ini keren buat nampilin info detail tanpa harus pindah halaman. User tetep di situ, tapi dapet info lebih.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="h6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6">
+                                6. Carousel (Slider) 
+                            </button>
+                        </h2>
+                        <div id="c6" class="accordion-collapse collapse" data-bs-parent="#playfulAccordion">
+                            <div class="accordion-body">
+                                <p>Geser-geser foto otomatis ala Instagram! Cocok banget buat pamerin hasil desain UI/UX aku di halaman portofolio biar klien terkesima.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="h7">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c7">
+                                7. Accordion 
+                            </button>
+                        </h2>
+                        <div id="c7" class="accordion-collapse collapse" data-bs-parent="#playfulAccordion">
+                            <div class="accordion-body">
+                                <p>Ya.. yang lagi kamu klik ini!  Suka banget karena dia hemat tempat. Isinya bisa banyak teks, tapi halamannya tetep kelihatan bersih karena disembunyiin dulu.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="h8">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c8">
+                                8. Badge (Label) 
+                            </button>
+                        </h2>
+                        <div id="c8" class="accordion-collapse collapse" data-bs-parent="#playfulAccordion">
+                            <div class="accordion-body">
+                                <p>Stiker kecil yang <em>powerful</em>. Biasa aku pake buat nandain skill kayak "UI/UX" atau status "GPA 3.90" biar langsung dapet perhatian pas orang baca CV.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="h9">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c9">
+                                9. Utilities (Margin & Padding) 
+                            </button>
+                        </h2>
+                        <div id="c9" class="accordion-collapse collapse" data-bs-parent="#playfulAccordion">
+                            <div class="accordion-body">
+                                <p>Ini sih <em>life saver</em>. Cuma ngetik <code>mt-5</code> (Margin Top) atau <code>p-3</code> (Padding), jarak elemen langsung rapi. Gak perlu bikin class CSS baru cuma buat geser dikit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="h10">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c10">
+                                10. Flexbox Utilities 
+                            </button>
+                        </h2>
+                        <div id="c10" class="accordion-collapse collapse" data-bs-parent="#playfulAccordion">
+                            <div class="accordion-body">
+                                <p><code>d-flex justify-content-center</code> adalah mantra ajaib! Bikin konten jadi di tengah (centering div) yang dulunya susah banget, sekarang jadi gampang banget pake ini.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="text-center py-4 mt-5" style="color: #888;">
+        <div class="container">
+            <p class="mb-0"><strong>Putri Maharani</strong></p>
+            <small>Profesional Portfolio</small>
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
